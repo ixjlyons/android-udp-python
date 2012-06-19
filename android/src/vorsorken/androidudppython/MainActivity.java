@@ -22,29 +22,27 @@ public class MainActivity extends Activity {
 	private Button sendButton;
 	private DatagramSocket socket;
 	
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
         
-        ipInput = (EditText) findViewById(R.id.address);
-        portInput = (EditText) findViewById(R.id.port);
-        messageInput = (EditText) findViewById(R.id.message);
+		ipInput = (EditText) findViewById(R.id.address);
+		portInput = (EditText) findViewById(R.id.port);
+		messageInput = (EditText) findViewById(R.id.message);
         
-        sendButton = (Button) findViewById(R.id.send);
-        sendButton.setOnClickListener(new OnClickListener() {
-        	@Override
-        	public void onClick(View v) {
-        		String message = messageInput.getText().toString();
-        		sendPacket(message);
-        		
-        	}
-        });
-        
-    }
+		sendButton = (Button) findViewById(R.id.send);
+		sendButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				String message = messageInput.getText().toString();
+				sendPacket(message);
+			}
+		});
+	}
     
- 	private void sendPacket(String message) {
- 		byte[] messageData = message.getBytes();
+	private void sendPacket(String message) {
+		byte[] messageData = message.getBytes();
  		
 		try {
 			InetAddress addr = InetAddress.getByName(ipInput.getText().toString());
@@ -62,8 +60,8 @@ public class MainActivity extends Activity {
 			Log.e("MainActivity sendPacket", "send failed");
 		}
  	}
- 	
- 	@Override
+	
+	@Override
 	public void onDestroy() {
 		super.onDestroy();
 		socket.disconnect();

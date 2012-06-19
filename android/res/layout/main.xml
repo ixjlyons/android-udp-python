@@ -34,7 +34,8 @@
 	        android:inputType="number"
 	        android:hint="Port" >
 	    </EditText>
-	</LinearLayout>
+	    
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
