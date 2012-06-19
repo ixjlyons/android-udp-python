@@ -1,1 +1,3 @@
 A simple method of communicating messages from Android to Python using UDP.
+
+Just run the Python script, then run the Android app. It will ask for a server IP address and port. Enter the IP address of the computer running the Python script and the PORT specified in the script. Then you can type messages and send them. They should show up as "received:" by the script, which then continues waiting for more messages.
