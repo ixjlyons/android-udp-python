@@ -3,3 +3,5 @@ bin
 gen
 proguard-project.txt
 assets
+.classpath
+.project
