@@ -1,0 +1,5 @@
+default.properties
+bin
+gen
+proguard-project.txt
+assets
